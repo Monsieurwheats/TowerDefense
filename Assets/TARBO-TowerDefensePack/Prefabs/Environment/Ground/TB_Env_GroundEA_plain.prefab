@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4460009375727956}
   - component: {fileID: 33127790689216198}
   - component: {fileID: 23370976035486694}
+  - component: {fileID: 7337105326459651125}
   m_Layer: 0
   m_Name: TB_Env_GroundEA_plain
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7337105326459651125
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002465828442168}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 7830ac9cf6bd1234f8c67a37c524745c, type: 3}

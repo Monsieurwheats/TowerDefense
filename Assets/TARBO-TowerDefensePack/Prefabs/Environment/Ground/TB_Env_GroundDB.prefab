@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4642994836498746}
   - component: {fileID: 33265513545985656}
   - component: {fileID: 23948914965962106}
+  - component: {fileID: 7193590384357022299}
   m_Layer: 0
   m_Name: TB_Env_GroundDB
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7193590384357022299
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772169374577590}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: a6584ce26d4a7a54eb4911316df3400c, type: 3}
