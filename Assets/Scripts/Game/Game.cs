@@ -9,6 +9,8 @@ public static class Game
 
     public static MapUI MapUI = null;
 
+    public static UnityEngine.Camera Cam = null;
+
     public const int TileSize = 10;
     
 }

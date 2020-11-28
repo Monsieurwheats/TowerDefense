@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.WSA;
@@ -14,6 +15,8 @@ public class Map : MonoBehaviour
     private readonly List<Transform> _placeable = new List<Transform>();
 
     public bool IsPlacingTower;
+
+    public IEnumerable<Transform> Tiles => _walkable.Concat(_placeable).ToList();
     
     public bool IsPath(Transform item)
     {

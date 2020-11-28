@@ -8,12 +8,11 @@ public class MapUI : MonoBehaviour
     
     [SerializeField] private RectTransform arrow;
     [SerializeField] private RectTransform corners;
-    [SerializeField] private Camera cam;
-    
+
     private void Start()
     {
         Game.MapUI = this;
-        Clear();
+        ClearCanvas();
     }
 
     public IEnumerator TowerPlacement()
@@ -21,14 +20,14 @@ public class MapUI : MonoBehaviour
         do
         {
             yield return null;
-            var ray = cam.ScreenPointToRay(Input.mousePosition);
+            var ray = Game.Cam.ScreenPointToRay(Input.mousePosition);
             if (!Physics.Raycast(ray, out var hitInfo)) continue;
             if (!Game.Map.IsPlaceable(hitInfo.transform)) continue;
             var tilePos = hitInfo.transform.position;
             var dir = hitInfo.point - tilePos;
             SetUI(tilePos, dir);
         } while (Game.Map.IsPlacingTower); // TODO: Placeholder condition
-        Clear();
+        ClearCanvas();
         yield return null;
     }
 
@@ -47,13 +46,13 @@ public class MapUI : MonoBehaviour
             rot = dir.z > 0 ? 180 : 0;
         }
         if (!Physics.Raycast(
-            cam.transform.position,
-            -cam.transform.position + tilePos + other,
+            Game.Cam.transform.position,
+            -Game.Cam.transform.position + tilePos + other,
             out var hit)) return;
         if (!Game.Map.IsPath(hit.transform)) return;
         Activate();
-        corners.position = cam.WorldToScreenPoint(tilePos);
-        arrow.position = cam.WorldToScreenPoint(tilePos + other / 2);
+        corners.position = Game.Cam.WorldToScreenPoint(tilePos);
+        arrow.position = Game.Cam.WorldToScreenPoint(tilePos + other / 2);
         arrow.rotation = Quaternion.AngleAxis(rot, Vector3.forward);
     }
 
@@ -63,7 +62,7 @@ public class MapUI : MonoBehaviour
         corners.gameObject.SetActive(true);
     }
     
-    private void Clear()
+    private void ClearCanvas()
     {
         arrow.gameObject.SetActive(false);
         corners.gameObject.SetActive(false);
