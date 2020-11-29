@@ -17,7 +17,7 @@ public class Camera : MonoBehaviour
     
     private void LateUpdate()
     {
-
+        if (Game.ShopUI.IsPlacingTower) return;
         if (!Input.GetMouseButton(0)) return;
 
         var x = Input.GetAxis("Mouse X");

@@ -15,20 +15,14 @@ public class MapUI : MonoBehaviour
         ClearCanvas();
     }
 
-    public IEnumerator TowerPlacement()
+    public void TowerPlacement()
     {
-        do
-        {
-            yield return null;
-            var ray = Game.Cam.ScreenPointToRay(Input.mousePosition);
-            if (!Physics.Raycast(ray, out var hitInfo)) continue;
-            if (!Game.Map.IsPlaceable(hitInfo.transform)) continue;
-            var tilePos = hitInfo.transform.position;
-            var dir = hitInfo.point - tilePos;
-            SetUI(tilePos, dir);
-        } while (Game.Map.IsPlacingTower); // TODO: Placeholder condition
-        ClearCanvas();
-        yield return null;
+        var ray = Game.Cam.ScreenPointToRay(Input.mousePosition);
+        if (!Physics.Raycast(ray, out var hitInfo)) return;
+        if (!Game.Map.IsPlaceable(hitInfo.transform)) return;
+        var tilePos = hitInfo.transform.position;
+        var dir = hitInfo.point - tilePos;
+        SetUI(tilePos, dir);
     }
 
     private void SetUI(Vector3 tilePos, Vector3 dir)
@@ -62,7 +56,7 @@ public class MapUI : MonoBehaviour
         corners.gameObject.SetActive(true);
     }
     
-    private void ClearCanvas()
+    public void ClearCanvas()
     {
         arrow.gameObject.SetActive(false);
         corners.gameObject.SetActive(false);

@@ -14,8 +14,6 @@ public class Map : MonoBehaviour
     private readonly List<Transform> _walkable = new List<Transform>();
     private readonly List<Transform> _placeable = new List<Transform>();
 
-    public bool IsPlacingTower;
-
     public IEnumerable<Transform> Tiles => _walkable.Concat(_placeable).ToList();
     
     public bool IsPath(Transform item)
@@ -39,24 +37,6 @@ public class Map : MonoBehaviour
         foreach (Transform o in terrain.transform)
         {
             _placeable.Add(o);
-        }
-    }
-
-    private void Update()
-    {
-        // TODO: Placeholder way of calling routine
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (!IsPlacingTower)
-            {
-                IsPlacingTower = true;
-                StartCoroutine(Game.MapUI.TowerPlacement());
-                
-            }
-            else
-            {
-                IsPlacingTower = false;
-            }
         }
     }
 }
