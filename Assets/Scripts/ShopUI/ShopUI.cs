@@ -1,7 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class ShopUI : MonoBehaviour
     public bool IsPlacingTower => _towerToPlace != null;
 
     private IEnumerator _helpRoutine;
-    private GameObject _towerToPlace;
+    private Tower _towerToPlace;
     
     private void Start()
     {
@@ -24,7 +23,8 @@ public class ShopUI : MonoBehaviour
 
     public void CloseHelp()
     {
-        StopCoroutine(_helpRoutine);
+        if (_helpRoutine != null)
+            StopCoroutine(_helpRoutine);
     }
 
     private IEnumerator Help(string message)
@@ -35,13 +35,23 @@ public class ShopUI : MonoBehaviour
 
     public void StartDrag(GameObject tower)
     {
-        _towerToPlace = tower;
+        var inst = Instantiate(tower).GetComponent<Tower>();
+        _towerToPlace = inst;
+        Drag();
     }
 
     public void StopDrag()
     {
+        _towerToPlace.Place();
         _towerToPlace = null;
-        Game.MapUI.ClearCanvas();
+    }
+    
+    public void Drag()
+    {
+        var ray = Game.Cam.ScreenPointToRay(Input.mousePosition);
+        if (!Physics.Raycast(ray, out var hitInfo, float.MaxValue, LayerMask.GetMask("Ground"))) return; // Return if no hit
+        if (!Game.Map.Tiles.Contains(hitInfo.collider.transform)) return; // Return if not floor
+        _towerToPlace.TryPlace(hitInfo);
     }
     
 }
