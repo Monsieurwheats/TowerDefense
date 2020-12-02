@@ -1,6 +1,8 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Camera : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class Camera : MonoBehaviour
     {
         if (Game.ShopUI.IsPlacingTower) return;
         if (!Input.GetMouseButton(0)) return;
+        if (IsPointerOverUIObject()) return;
 
         var x = Input.GetAxis("Mouse X");
         var y = Input.GetAxis("Mouse Y");
@@ -29,7 +32,17 @@ public class Camera : MonoBehaviour
         if (camPos.z >= _maxZ) x = Mathf.Min(x, 0); // Right bound
         
         transform.Translate(-x, -y, 0);
+    }
 
+    private bool IsPointerOverUIObject()
+    {
+        var eventDataCurrentPosition = new PointerEventData(EventSystem.current)
+        {
+            position = new Vector2(Input.mousePosition.x, Input.mousePosition.y)
+        };
+        var results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
     }
 
     private IEnumerator GetBounds()
