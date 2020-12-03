@@ -8,13 +8,13 @@ public class Camera : MonoBehaviour
 {
 
     private float _minX, _minZ, _maxX, _maxZ;
-    
+
     private void Start()
     {
         Game.Cam = GetComponent<UnityEngine.Camera>();
         StartCoroutine(GetBounds());
     }
-    
+
     private void LateUpdate()
     {
         if (Game.ShopUI.IsPlacingTower) return;
@@ -25,12 +25,12 @@ public class Camera : MonoBehaviour
         var y = Input.GetAxis("Mouse Y");
 
         var camPos = transform.position;
-        
+
         if (camPos.x <= _minX) y = Mathf.Min(y, 0); // Bottom bound
         if (camPos.x >= _maxX) y = Mathf.Max(y, 0); // Top bound
         if (camPos.z <= _minZ) x = Mathf.Max(x, 0); // Left bound
         if (camPos.z >= _maxZ) x = Mathf.Min(x, 0); // Right bound
-        
+
         transform.Translate(-x, -y, 0);
     }
 
@@ -62,5 +62,5 @@ public class Camera : MonoBehaviour
         _maxX = maxX;
         _maxZ = maxZ;
     }
-    
+
 }

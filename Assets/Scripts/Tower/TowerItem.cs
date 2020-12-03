@@ -6,12 +6,12 @@ public class TowerItem : MonoBehaviour
     // {
     //     if (tower = )
     // }
-    
-    
-    
-    
+
+
+
+
     public Tower Tower = null;
-    
-    
-    
+
+
+
 }

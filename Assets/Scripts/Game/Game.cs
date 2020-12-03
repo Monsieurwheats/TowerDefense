@@ -8,5 +8,5 @@
     public static UnityEngine.Camera Cam = null;
 
     public const int TileSize = 10;
-    
+
 }

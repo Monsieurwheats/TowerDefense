@@ -9,12 +9,12 @@ public class ShopUI : MonoBehaviour
 
     private IEnumerator _helpRoutine;
     private Tower _towerToPlace;
-    
+
     private void Start()
     {
         Game.ShopUI = this;
     }
-    
+
     public void OpenHelp(string message)
     {
         _helpRoutine = Help(message);
@@ -45,7 +45,7 @@ public class ShopUI : MonoBehaviour
         _towerToPlace.Place();
         _towerToPlace = null;
     }
-    
+
     public void Drag()
     {
         var ray = Game.Cam.ScreenPointToRay(Input.mousePosition);
@@ -53,5 +53,5 @@ public class ShopUI : MonoBehaviour
         if (!Game.Map.Tiles.Contains(hitInfo.collider.transform)) return; // Return if not floor
         _towerToPlace.TryPlace(hitInfo);
     }
-    
+
 }

@@ -11,7 +11,7 @@ public class Map : MonoBehaviour
     private readonly List<Transform> _placeable = new List<Transform>();
 
     public IEnumerable<Transform> Tiles => _walkable.Concat(_placeable).ToList();
-    
+
     public bool IsPath(Transform item)
     {
         return _walkable.Contains(item);
