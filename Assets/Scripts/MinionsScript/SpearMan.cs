@@ -16,7 +16,6 @@ public class SpearMan : Minions
 
     protected override void setTexture()
     {
-        Debug.Log("yo man");
         if (level > -1)
         {
             m_renderer.material.mainTexture = textures[level];
@@ -27,7 +26,11 @@ public class SpearMan : Minions
             StartCoroutine(SandD());
         }
     }
-
+    protected override void Die()
+    {
+        Player.money += value;
+        StartCoroutine(SandD());
+    }
     IEnumerator SandD()
     {
         //int r = (Random.Range(0, 5) * 1000) % 5;

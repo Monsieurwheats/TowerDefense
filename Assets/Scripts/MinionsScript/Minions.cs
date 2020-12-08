@@ -9,12 +9,19 @@ public class Minions : MonoBehaviour
     protected int level;
     protected Renderer m_renderer;
     public Texture[] textures = new Texture[5];
+   
+
+
+    //place holder
+    public  int value = 5;
+    public int damage = 1;
 
 
 
     protected virtual void Start()
     {
         // will change when making the waves
+        
         level = 4;
         target = GameObject.FindGameObjectWithTag("End").transform.position;
         agent = GetComponent<NavMeshAgent>();
@@ -28,7 +35,7 @@ public class Minions : MonoBehaviour
 
         //have to use wait else agent wont be on the navmesh too small radius
         StartCoroutine(changeRadius());
-        StartCoroutine(tDmg());
+        //StartCoroutine(tDmg());
     }
 
     IEnumerator changeRadius()
@@ -67,10 +74,17 @@ public class Minions : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            Die();
         }
 
 
+    }
+    protected virtual void  Die()
+    {
+
+        Player.money += value;
+        Debug.Log(Player.money);
+        Destroy(gameObject);
     }
 
     public virtual void takeDmg(int dmg)
