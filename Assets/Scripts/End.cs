@@ -27,8 +27,7 @@ public class End : MonoBehaviour
                 {
                     //+1 since first level is level 0;
                     int dmg = hit.GetComponent<Minions>().damage * (hit.GetComponent<Minions>().Level + 1);
-                    Player.life -= dmg;
-                    Debug.Log(Player.life);
+                    Game.Player.Life -= dmg;
                     Destroy(hit.gameObject);
                 }
             }

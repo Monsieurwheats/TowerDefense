@@ -28,7 +28,7 @@ public class SpearMan : Minions
     }
     protected override void Die()
     {
-        Player.money += value;
+        Game.Player.Money += value;
         StartCoroutine(SandD());
     }
     IEnumerator SandD()

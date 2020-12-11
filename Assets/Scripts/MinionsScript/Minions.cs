@@ -82,8 +82,7 @@ public class Minions : MonoBehaviour
     protected virtual void  Die()
     {
 
-        Player.money += value;
-        Debug.Log(Player.money);
+        Game.Player.Money += value;
         Destroy(gameObject);
     }
 
