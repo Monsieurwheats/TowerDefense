@@ -20,8 +20,8 @@ public class Player : MonoBehaviour
     private int _money = 50;
     private int _life = 100;
 
-    public TMP_Text moneyText;
-    public TMP_Text lifeText;
+    [SerializeField] private TMP_Text moneyText = null;
+    [SerializeField] private TMP_Text lifeText = null;
 
     private void Start()
     {

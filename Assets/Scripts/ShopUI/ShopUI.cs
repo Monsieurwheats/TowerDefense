@@ -36,18 +36,28 @@ public class ShopUI : MonoBehaviour
     public void StartDrag(GameObject tower)
     {
         var inst = Instantiate(tower).GetComponent<Tower>();
-        _towerToPlace = inst;
-        Drag();
+        if (Game.Player.Money >= inst.Price) 
+        {
+            _towerToPlace = inst; 
+            Drag();
+        }
+        else Destroy(inst);
     }
 
     public void StopDrag()
     {
-        _towerToPlace.Place();
+        if (_towerToPlace == null) return;
+        if (Game.Player.Money >= _towerToPlace.Price)
+        {
+            var wasPlaced = _towerToPlace.Place();
+            if (wasPlaced) Game.Player.Money -= _towerToPlace.Price;
+        }
         _towerToPlace = null;
     }
 
     public void Drag()
     {
+        if (_towerToPlace == null) return;
         var ray = Game.Cam.ScreenPointToRay(Input.mousePosition);
         if (!Physics.Raycast(ray, out var hitInfo, float.MaxValue, LayerMask.GetMask("Ground"))) return; // Return if no hit
         if (!Game.Map.Tiles.Contains(hitInfo.collider.transform)) return; // Return if not floor

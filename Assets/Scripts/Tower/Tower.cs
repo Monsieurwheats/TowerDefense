@@ -16,19 +16,21 @@ public abstract class Tower : MonoBehaviour
             _canBePlaced = value;
         }
     }
+    
+    public int Price => level1.price;
 
     private bool _canBePlaced;
     private static readonly Color GoodPlace = new Color(0.2f, 0.2f, 0.2f, 0.5f);
     private static readonly Color BadPlace = new Color(1, 0, 0, 0.5f);
 
-    [SerializeField] private Collider box;
-    [SerializeField] private GameObject rangeIndicator;
+    [SerializeField] private Collider box = null;
+    [SerializeField] private GameObject rangeIndicator = null;
 
-    [SerializeField] private Level level1;
-    [SerializeField] private Level level2;
-    [SerializeField] private Level level3;
-    [SerializeField] private Level level4A;
-    [SerializeField] private Level level4B;
+    [SerializeField] private Level level1 = null;
+    [SerializeField] private Level level2 = null;
+    [SerializeField] private Level level3 = null;
+    [SerializeField] private Level level4A = null;
+    [SerializeField] private Level level4B = null;
 
     protected Level CurrLevel;
 
@@ -93,8 +95,9 @@ public abstract class Tower : MonoBehaviour
         public Transform[] shootPoint;
         public float range;
         public float secPerShot;
-
-        private List<Level> _next;
+        public int price;
+        
+        [NonSerialized] private List<Level> _next;
 
         public Level()
         {
