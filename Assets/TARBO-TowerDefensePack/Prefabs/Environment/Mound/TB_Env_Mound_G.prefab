@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4011419109529354}
   - component: {fileID: 33385341231632322}
   - component: {fileID: 23593945462361188}
+  - component: {fileID: -3442421241278315554}
   m_Layer: 0
   m_Name: TB_Env_Mound_G
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-3442421241278315554
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834428767915536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 3d38732f5f77ea448967dbeb2f6c06ba, type: 3}

@@ -20,6 +20,8 @@ public abstract class Tower : MonoBehaviour
     public int Price => level1.price;
 
     private bool _canBePlaced;
+    private Coroutine _shootRoutine;
+    
     private static readonly Color GoodPlace = new Color(0.2f, 0.2f, 0.2f, 0.5f);
     private static readonly Color BadPlace = new Color(1, 0, 0, 0.5f);
 
@@ -74,15 +76,45 @@ public abstract class Tower : MonoBehaviour
             return false;
         }
         rangeIndicator.SetActive(false);
+        // TODO: Check if round is playing
+        StartRound();
         return true;
     }
 
+    public void StartRound()
+    {
+        _shootRoutine = StartCoroutine(Shoot());
+    }
+
+    public void EndRound()
+    {
+        StopCoroutine(_shootRoutine);
+        _shootRoutine = null;
+    }
+    
     protected abstract IEnumerator Shoot();
+
+    protected Minions[] MinionsInRange()
+    {
+        var colliders = Physics.OverlapSphere(this.transform.position, CurrLevel.range / 2);
+        var minions = colliders
+            .Select(c => c.gameObject.GetComponent<Minions>())
+            .Where(minion => minion != null)
+            .OrderBy(minion => minion.Distance).ToArray();
+        return minions;
+    }
 
     private void OnMouseDown()
     {
         //TODO: Open upgrade ui
         print("Open ui for " + this);
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (CurrLevel == null) return;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, CurrLevel.range / 2);
     }
 
 
