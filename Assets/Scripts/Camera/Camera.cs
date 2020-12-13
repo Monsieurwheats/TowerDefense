@@ -17,6 +17,7 @@ public class Camera : MonoBehaviour
 
     private void LateUpdate()
     {
+        // TODO: Will have to fix for mobile
         if (Game.ShopUI.IsPlacingTower) return;
         if (!Input.GetMouseButton(0)) return;
         if (IsPointerOverUIObject()) return;
