@@ -1,4 +1,5 @@
-﻿using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,32 +8,40 @@ using UnityEngine.EventSystems;
 public class Camera : MonoBehaviour
 {
 
+    private Vector3 _touchStart;
+    private Vector3 _camOffset;
     private float _minX, _minZ, _maxX, _maxZ;
 
     private void Start()
     {
         Game.Cam = GetComponent<UnityEngine.Camera>();
         StartCoroutine(GetBounds());
+        _camOffset = new Vector3(0, 0, transform.position.y);
     }
 
     private void LateUpdate()
     {
-        // TODO: Will have to fix for mobile
         if (Game.ShopUI.IsPlacingTower) return;
+        if (Input.GetMouseButtonDown(0))
+        {
+            _touchStart = Game.Cam.ScreenToWorldPoint(Input.mousePosition + _camOffset);
+        }
         if (!Input.GetMouseButton(0)) return;
         if (IsPointerOverUIObject()) return;
 
-        var x = Input.GetAxis("Mouse X");
-        var y = Input.GetAxis("Mouse Y");
-
+        var touch = Game.Cam.ScreenToWorldPoint(Input.mousePosition + _camOffset);
+        var direction = _touchStart - touch;
+        
+        var x = direction.x;
+        var z = direction.z;
         var camPos = transform.position;
+        
+        if (camPos.x <= _minX) x = Mathf.Max(x, 0); // Bottom bound
+        if (camPos.x >= _maxX) x = Mathf.Min(x, 0); // Top bound
+        if (camPos.z <= _minZ) z = Mathf.Max(z, 0); // Left bound
+        if (camPos.z >= _maxZ) z = Mathf.Min(z, 0); // Right bound
 
-        if (camPos.x <= _minX) y = Mathf.Min(y, 0); // Bottom bound
-        if (camPos.x >= _maxX) y = Mathf.Max(y, 0); // Top bound
-        if (camPos.z <= _minZ) x = Mathf.Max(x, 0); // Left bound
-        if (camPos.z >= _maxZ) x = Mathf.Min(x, 0); // Right bound
-
-        transform.Translate(-x, -y, 0);
+        transform.position += new Vector3(x, 0, z);
     }
 
     private bool IsPointerOverUIObject()
