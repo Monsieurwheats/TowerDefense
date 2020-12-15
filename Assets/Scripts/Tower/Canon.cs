@@ -7,6 +7,7 @@ public class Canon : Tower
     protected override IEnumerator Shoot()
     {
         Minions[] minionsInRange = {};
+        // TODO: Add condition (with round end)
         while (true)
         {
             yield return new WaitUntil( () =>

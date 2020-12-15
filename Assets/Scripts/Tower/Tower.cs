@@ -34,11 +34,22 @@ public abstract class Tower : MonoBehaviour
     [SerializeField] private Level level4A = null;
     [SerializeField] private Level level4B = null;
 
-    protected Level CurrLevel;
+    private Level _level;
+
+    public Level CurrLevel
+    {
+        get => _level;
+        set
+        {
+            _level.turret.SetActive(false);
+            _level = value;
+            _level.turret.SetActive(true);
+        }
+    }
 
     private void Start()
     {
-        CurrLevel = level1;
+        _level = level1;
         level1.SetNext(level2);
         level2.SetNext(level3);
         level3.SetNext(level4A).SetNext(level4B);
@@ -107,7 +118,7 @@ public abstract class Tower : MonoBehaviour
     private void OnMouseDown()
     {
         //TODO: Open upgrade ui
-        print("Open ui for " + this);
+        Game.TowerUI.SelectedTower = this;
     }
 
     private void OnDrawGizmos()
@@ -119,16 +130,18 @@ public abstract class Tower : MonoBehaviour
 
 
     [Serializable]
-    protected class Level
+    public class Level
     {
         public GameObject turret;
         public GameObject construction;
+        public Sprite thumbnail;
         public GameObject bullet;
         public Transform[] shootPoint;
         public float range;
         public float secPerShot;
         public int price;
-        
+        public int sellPrice;
+
         [NonSerialized] private List<Level> _next;
 
         public Level()
