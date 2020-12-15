@@ -24,6 +24,7 @@ public class UpgradeButton : MonoBehaviour
     {
         if (Game.Player.Money < Level.price) return;
         Tower.CurrLevel = Level;
+        Game.Player.Money -= Level.price;
         Game.TowerUI.SelectedTower = Tower;
     }
 
