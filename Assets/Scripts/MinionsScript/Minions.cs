@@ -22,7 +22,7 @@ public class Minions : MonoBehaviour
     {
         // will change when making the waves
         
-        level = 4;
+        //level = 4;
         target = GameObject.FindGameObjectWithTag("End").transform.position;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = 5f;
@@ -35,7 +35,7 @@ public class Minions : MonoBehaviour
 
         //have to use wait else agent wont be on the navmesh too small radius
         StartCoroutine(changeRadius());
-        //StartCoroutine(tDmg());
+       // StartCoroutine(tDmg());
     }
 
     IEnumerator changeRadius()
@@ -48,7 +48,7 @@ public class Minions : MonoBehaviour
     //test tool
     IEnumerator tDmg()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         takeDmg(1);
         StartCoroutine(tDmg());
     }
@@ -83,6 +83,7 @@ public class Minions : MonoBehaviour
     {
 
         Game.Player.Money += value;
+        WaveSpawner.EAlive--;
         Destroy(gameObject);
     }
 

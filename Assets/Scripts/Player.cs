@@ -17,8 +17,8 @@ public class Player : MonoBehaviour
         get => _life;
     }
     
-    private int _money = 50;
-    private int _life = 100;
+    private int _money = 30;
+    private int _life = 10;
 
     [SerializeField] private TMP_Text moneyText = null;
     [SerializeField] private TMP_Text lifeText = null;

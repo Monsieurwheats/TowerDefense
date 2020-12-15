@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7786130985739098005}
   - component: {fileID: 7786130985739098004}
-  - component: {fileID: 7786130985739098011}
   - component: {fileID: 7197469832357392370}
   - component: {fileID: 6272352760058101152}
   m_Layer: 8
@@ -57,25 +56,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7786130985739098011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7786130985739098010}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3441e9d5202fd024abc31e957518e883, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textures:
-  - {fileID: 2800000, guid: f42a0034d35defb4ebcfb9ebd45b9bf0, type: 3}
-  - {fileID: 2800000, guid: 0dbfa2cf71b3cd54cb74413917a8f6ef, type: 3}
-  - {fileID: 2800000, guid: f68d988c3d3b74746a505dfb2172c86f, type: 3}
-  - {fileID: 2800000, guid: 060bca813f41f6a429b63ede97aa9b80, type: 3}
-  - {fileID: 2800000, guid: 4df352d690fb3dc4685b0d2b49f5cf3a, type: 3}
-  value: 5
 --- !u!114 &7197469832357392370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,16 +65,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7786130985739098010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 618a89a472ad2ae43a1960b2ea21fee4, type: 3}
+  m_Script: {fileID: 11500000, guid: f34de06ea896e6648bd44eabd31b53f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textures:
-  - {fileID: 2800000, guid: f42a0034d35defb4ebcfb9ebd45b9bf0, type: 3}
-  - {fileID: 2800000, guid: 0dbfa2cf71b3cd54cb74413917a8f6ef, type: 3}
-  - {fileID: 2800000, guid: f68d988c3d3b74746a505dfb2172c86f, type: 3}
-  - {fileID: 2800000, guid: 060bca813f41f6a429b63ede97aa9b80, type: 3}
-  - {fileID: 2800000, guid: 4df352d690fb3dc4685b0d2b49f5cf3a, type: 3}
+  - {fileID: 2800000, guid: 9358cd1879e82f240b022d3380d0dca3, type: 3}
+  - {fileID: 2800000, guid: 7f7120ad8592e8e45bacde7fd384cc4f, type: 3}
+  - {fileID: 2800000, guid: ccf03537e6e3b8c41b1bec7bda8ce7b2, type: 3}
+  - {fileID: 2800000, guid: 996205afca57fa047a048ea6f6af8313, type: 3}
+  - {fileID: 2800000, guid: c58e0beb1f552b442bc5f59b41288bc8, type: 3}
   value: 5
+  damage: 1
   archer: {fileID: 8770273199234439789, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
   knight: {fileID: 2395234094626032572, guid: 84045ed3c3bab3847aa29a1dfaaabd63, type: 3}
 --- !u!136 &6272352760058101152

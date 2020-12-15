@@ -65,16 +65,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3233212683887308665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e7e9af8740c52e48b009443b2505aef, type: 3}
+  m_Script: {fileID: 11500000, guid: ff7f95171873a4f46a20d1ebaf395f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textures:
-  - {fileID: 2800000, guid: f42a0034d35defb4ebcfb9ebd45b9bf0, type: 3}
-  - {fileID: 2800000, guid: 0dbfa2cf71b3cd54cb74413917a8f6ef, type: 3}
-  - {fileID: 2800000, guid: f68d988c3d3b74746a505dfb2172c86f, type: 3}
-  - {fileID: 2800000, guid: 060bca813f41f6a429b63ede97aa9b80, type: 3}
-  - {fileID: 2800000, guid: 4df352d690fb3dc4685b0d2b49f5cf3a, type: 3}
+  - {fileID: 2800000, guid: 9358cd1879e82f240b022d3380d0dca3, type: 3}
+  - {fileID: 2800000, guid: 7f7120ad8592e8e45bacde7fd384cc4f, type: 3}
+  - {fileID: 2800000, guid: ccf03537e6e3b8c41b1bec7bda8ce7b2, type: 3}
+  - {fileID: 2800000, guid: 996205afca57fa047a048ea6f6af8313, type: 3}
+  - {fileID: 2800000, guid: c58e0beb1f552b442bc5f59b41288bc8, type: 3}
   value: 5
+  damage: 1
 --- !u!136 &7987975288250467530
 CapsuleCollider:
   m_ObjectHideFlags: 0
