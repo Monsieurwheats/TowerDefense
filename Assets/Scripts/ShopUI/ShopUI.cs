@@ -35,10 +35,11 @@ public class ShopUI : MonoBehaviour
 
     public void StartDrag(GameObject tower)
     {
-        var inst = Instantiate(tower).GetComponent<Tower>();
-        if (Game.Player.Money >= inst.Price) 
+        var inst = Instantiate(tower);
+        var towerInst = inst.GetComponent<Tower>();
+        if (Game.Player.Money >= towerInst.Price) 
         {
-            _towerToPlace = inst; 
+            _towerToPlace = towerInst; 
             Drag();
         }
         else Destroy(inst);
