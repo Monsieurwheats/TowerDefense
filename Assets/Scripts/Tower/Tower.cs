@@ -117,7 +117,7 @@ public abstract class Tower : MonoBehaviour
 
     private void OnMouseDown()
     {
-        //TODO: Open upgrade ui
+        if (Camera.IsPointerOverUIObject()) return;
         Game.TowerUI.SelectedTower = this;
     }
 
