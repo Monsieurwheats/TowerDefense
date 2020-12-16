@@ -81,7 +81,7 @@ public abstract class Tower : MonoBehaviour
 
     public bool Place()
     {
-        if (!CanBePlaced)
+        if (!CanBePlaced || Camera.IsPointerOverUIObject())
         {
             Destroy(gameObject);
             return false;

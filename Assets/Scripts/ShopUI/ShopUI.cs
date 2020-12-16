@@ -48,11 +48,8 @@ public class ShopUI : MonoBehaviour
     public void StopDrag()
     {
         if (_towerToPlace == null) return;
-        if (Game.Player.Money >= _towerToPlace.Price)
-        {
-            var wasPlaced = _towerToPlace.Place();
-            if (wasPlaced) Game.Player.Money -= _towerToPlace.Price;
-        }
+        var wasPlaced = _towerToPlace.Place();
+        if (wasPlaced) Game.Player.Money -= _towerToPlace.Price;
         _towerToPlace = null;
     }
 
