@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class TowerUI : MonoBehaviour
 {
 
-    [SerializeField] private GameObject towerUI;
-    [SerializeField] private GameObject upgradesPanel;
-    [SerializeField] private GameObject upgradePrefab;
+    [SerializeField] private GameObject towerUI = null;
+    [SerializeField] private GameObject upgradesPanel = null;
+    [SerializeField] private GameObject upgradePrefab = null;
 
     private Tower _selectedTower = null;
     

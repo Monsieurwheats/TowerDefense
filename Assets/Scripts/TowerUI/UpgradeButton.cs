@@ -10,14 +10,12 @@ public class UpgradeButton : MonoBehaviour
 {
     [NonSerialized] public Tower Tower;
     [NonSerialized] public Tower.Level Level;
-    
-    [SerializeField] private TMP_Text price;
 
     public void Start()
     {
         //TODO: Make better sprites
         GetComponent<Image>().sprite = Level.thumbnail;
-        price.text = "$ " + Level.price;
+        GetComponentInChildren<TMP_Text>().text = "$ " + Level.price;
     }
     
     public void Upgrade()
