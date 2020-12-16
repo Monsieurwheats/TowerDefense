@@ -44,7 +44,7 @@ public class Camera : MonoBehaviour
         transform.position += new Vector3(x, 0, z);
     }
 
-    private bool IsPointerOverUIObject()
+    public static bool IsPointerOverUIObject()
     {
         var eventDataCurrentPosition = new PointerEventData(EventSystem.current)
         {

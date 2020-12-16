@@ -70,7 +70,7 @@ MonoBehaviour:
     shootPoint:
     - {fileID: 6931012877163913598}
     range: 20
-    secPerShot: 1
+    secPerShot: 2
     price: 30
     sellPrice: 10
   level2:
