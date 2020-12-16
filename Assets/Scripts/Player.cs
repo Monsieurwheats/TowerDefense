@@ -10,10 +10,14 @@ public class Player : MonoBehaviour
     {
         set 
         { 
+            if(_money> value)
+            {
+                GameM.UIsound.clip = buy;
+                GameM.UIsound.Play();
+            } 
             _money = value; 
             Refresh();
-            GameM.UIsound.clip = buy;
-            GameM.UIsound.Play();
+
         }
         get => _money;
     }

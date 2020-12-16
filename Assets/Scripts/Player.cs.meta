@@ -3,7 +3,10 @@ guid: ba0bb7f89ee85964f809cfda3938a003
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - moneyText: {instanceID: 0}
+  - lifeText: {instanceID: 0}
+  - buy: {fileID: 8300000, guid: 13264acfcad30114193467abfd18a2c3, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
