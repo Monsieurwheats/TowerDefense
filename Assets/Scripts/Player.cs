@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -27,6 +28,21 @@ public class Player : MonoBehaviour
     {
         Game.Player = this;
         Refresh();
+    }
+
+    private void Update()
+    {
+        #if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Money += 1000;
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            Life += 1000;
+        }
+        #endif
     }
 
     private void Refresh()
