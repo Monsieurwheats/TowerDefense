@@ -10,7 +10,7 @@ public class GameM : MonoBehaviour
    
     public void PlayerWave()
     {
-        if(spawner.playing == false && spawner.enabled == true)
+        if(spawner.playing == false && spawner.enabled == true) // tempo cond maybe
         {
             spawner.StartWave();
         }
