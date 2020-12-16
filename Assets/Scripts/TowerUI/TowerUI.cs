@@ -47,9 +47,7 @@ public class TowerUI : MonoBehaviour
         
         foreach (var level in _selectedTower.CurrLevel.GetNext())
         {
-            var upgrade = Instantiate(upgradePrefab, upgradesTransform).GetComponent<UpgradeButton>();
-            upgrade.Level = level;
-            upgrade.Tower = _selectedTower;
+            UpgradeButton.Create(upgradePrefab, upgradesTransform, level, _selectedTower);
         }
     }
     
