@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4601037468149952}
   - component: {fileID: 33211880212385746}
   - component: {fileID: 23709973343202864}
+  - component: {fileID: 607793530162945446}
   m_Layer: 0
-  m_Name: TB_CanonTower_Lvl3_Rocket
+  m_Name: Ball_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,3 +82,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &607793530162945446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481178132486170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a96826053ba81e46853b3ccec194ca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

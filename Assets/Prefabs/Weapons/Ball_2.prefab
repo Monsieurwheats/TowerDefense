@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4518610269964370}
   - component: {fileID: 33566295691840628}
   - component: {fileID: 23676812489259998}
+  - component: {fileID: -3737799624311713802}
   m_Layer: 0
-  m_Name: TB_CanonTower_Lvl2_Ball
+  m_Name: Ball_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,3 +82,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-3737799624311713802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298584887169390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a96826053ba81e46853b3ccec194ca3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

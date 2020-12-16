@@ -15,12 +15,8 @@ public class Canon : Tower
                 minionsInRange = MinionsInRange();
                 return minionsInRange.Length != 0;
             });
-            // TODO: Remove damage and only spawn bullet
-            print("shoot on " +  minionsInRange[0]);
-            minionsInRange[0].takeDmg(CurrLevel.damage);
-            Debug.Log(CurrLevel.damage);
-            Debug.Log(CurrLevel.secPerShot);
             
+            Weapon.Create(CurrLevel.bullet, minionsInRange[0], Shooter, CurrLevel.damage);
             yield return new WaitForSeconds(CurrLevel.secPerShot);
         }
     }
