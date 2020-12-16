@@ -41,8 +41,8 @@ public class Minions : MonoBehaviour
     IEnumerator changeRadius()
     {
         //only way found to make agent walk through each other
-        yield return new WaitForSeconds(0.0001f);
-        agent.radius = 0.1f;
+        yield return new WaitForSeconds(0.000001f);
+        agent.radius = 0.001f;
 
     }
     //test tool

@@ -26,6 +26,7 @@ public class ArcherTower : Tower
             var angle = Vector3.SignedAngle(shooter.forward, targetDir, Vector3.up);
             shooter.RotateAround(shooterPos, Vector3.up, angle);
             minionsInRange[0].takeDmg(CurrLevel.damage); //ask oli where dmg is for tower
+            AudioSource.PlayClipAtPoint(shootingSound, transform.position);
             
             yield return new WaitForSeconds(CurrLevel.secPerShot);
         }

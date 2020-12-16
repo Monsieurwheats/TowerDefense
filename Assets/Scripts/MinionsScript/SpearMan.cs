@@ -22,8 +22,9 @@ public class SpearMan : Minions
         }
         else
         {
-            //prob dont need 
+           
             StartCoroutine(SandD());
+   
         }
     }
     protected override void Die()
@@ -35,18 +36,20 @@ public class SpearMan : Minions
     {
         //int r = (Random.Range(0, 5) * 1000) % 5;
         //maybe make level random
-        var a = Instantiate(archer);
+        WaveSpawner.EAlive += 2;
         var b = Instantiate(knight);
-        a.transform.position = transform.position;
-        a.transform.rotation = gameObject.transform.rotation;
         b.transform.position = transform.position;
         b.transform.rotation = gameObject.transform.rotation;
+        yield return new WaitForSeconds(0.001f);
 
+        var a = Instantiate(archer);
+
+        a.transform.position = transform.position;
+        a.transform.rotation = gameObject.transform.rotation;
         a.GetComponent<Archer>().Level = maxl;
         b.GetComponent<Chevalier>().Level = maxl;
+        base.Die();
 
-        //yield return new WaitForSeconds(0.01f);
-        Destroy(gameObject);
         yield return null;
     }
 

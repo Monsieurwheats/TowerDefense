@@ -18,6 +18,7 @@ public abstract class Tower : MonoBehaviour
     }
     
     public int Price => level1.price;
+    public AudioClip shootingSound;
 
     private bool _canBePlaced;
     private Coroutine _shootRoutine;

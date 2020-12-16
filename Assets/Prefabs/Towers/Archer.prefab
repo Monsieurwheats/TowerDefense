@@ -55,6 +55,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9bceaae1f466a419b91808ef7e9edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootingSound: {fileID: 8300000, guid: 9ed241d9c7e363042a5ab5ac2cda3908, type: 3}
   box: {fileID: 8209282651098875198}
   rangeIndicator: {fileID: 8733480870371771234}
   level1:
@@ -118,6 +119,7 @@ MonoBehaviour:
     secPerShot: 0.75
     price: 10
     sellPrice: 20
+  shootingSound: {fileID: 0}
 --- !u!65 &8209282651098875198
 BoxCollider:
   m_ObjectHideFlags: 0

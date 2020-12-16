@@ -35,8 +35,8 @@ public class WaveSpawner : MonoBehaviour
         }
         while(EAlive > 0)
         {
-            
-       
+
+            Debug.Log("Minions alive: " + EAlive);
             yield return new WaitForSeconds(1f);
         }
         waveNumber++;
