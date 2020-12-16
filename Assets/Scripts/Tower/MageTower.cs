@@ -1,9 +1,9 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Canon : Tower
+public class MageTower : Tower
 {
-
     protected override IEnumerator Shoot()
     {
         Minions[] minionsInRange = {};
@@ -15,14 +15,11 @@ public class Canon : Tower
                 minionsInRange = MinionsInRange();
                 return minionsInRange.Length != 0;
             });
-            // TODO: Remove damage and only spawn bullet
             print("shoot on " +  minionsInRange[0]);
             minionsInRange[0].takeDmg(CurrLevel.damage); //ask oli where dmg is for tower
             
             yield return new WaitForSeconds(CurrLevel.secPerShot);
         }
+        yield return null;
     }
-    
 }
-
-

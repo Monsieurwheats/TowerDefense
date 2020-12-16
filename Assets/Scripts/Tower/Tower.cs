@@ -136,6 +136,7 @@ public abstract class Tower : MonoBehaviour
         public GameObject construction;
         public Sprite thumbnail;
         public GameObject bullet;
+        public int damage;
         public Transform[] shootPoint;
         public float range;
         public float secPerShot;
