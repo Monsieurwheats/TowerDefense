@@ -16,7 +16,7 @@ public class MageTower : Tower
                 return minionsInRange.Length != 0;
             });
             print("shoot on " +  minionsInRange[0]);
-            Weapon.Create(CurrLevel.bullet, minionsInRange[0], Shooter);
+            Weapon.Create(CurrLevel.bullet, minionsInRange[0], Shooter, CurrLevel.damage);
             minionsInRange[0].takeDmg(CurrLevel.damage);
             
             yield return new WaitForSeconds(CurrLevel.secPerShot);

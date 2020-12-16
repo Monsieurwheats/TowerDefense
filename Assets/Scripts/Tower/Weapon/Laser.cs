@@ -8,6 +8,7 @@ public class Laser : Weapon
     {
         var line = GetComponent<LineRenderer>();
         line.SetPositions(new [] {Origin, Target.transform.position});
+        Target.takeDmg(Damage);
         StartCoroutine(Remove());
     }
 
