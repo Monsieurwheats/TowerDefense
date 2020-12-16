@@ -35,6 +35,18 @@ public abstract class Tower : MonoBehaviour
     [SerializeField] private Level level4B = null;
 
     private Level _level;
+    
+    private int _shooter = 0;
+
+    protected Transform Shooter
+    {
+        get
+        {
+            _shooter += 1;
+            _shooter %= CurrLevel.shootPoint.Length;
+            return CurrLevel.shootPoint[_shooter];
+        }
+    }
 
     public Level CurrLevel
     {

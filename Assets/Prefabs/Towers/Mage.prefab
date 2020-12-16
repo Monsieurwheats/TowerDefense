@@ -126,7 +126,7 @@ MonoBehaviour:
     turret: {fileID: 622969398522861046}
     construction: {fileID: 887590708522588961}
     thumbnail: {fileID: 21300000, guid: f5610d7df85f72a4f8a123a825902a9b, type: 3}
-    bullet: {fileID: 0}
+    bullet: {fileID: 6045936182016805959, guid: 102cb4e0d1c5e7641b8fcf74f25a1986, type: 3}
     damage: 1
     shootPoint:
     - {fileID: 2780977936319357019}
@@ -138,7 +138,7 @@ MonoBehaviour:
     turret: {fileID: 6344282954800933607}
     construction: {fileID: 2019914804308815682}
     thumbnail: {fileID: 21300000, guid: 72f092d14fd11a049bac03462c8cdf66, type: 3}
-    bullet: {fileID: 0}
+    bullet: {fileID: 6045936182016805959, guid: 102cb4e0d1c5e7641b8fcf74f25a1986, type: 3}
     damage: 1
     shootPoint:
     - {fileID: 2501085760441530086}
@@ -150,7 +150,7 @@ MonoBehaviour:
     turret: {fileID: 8397211259518399635}
     construction: {fileID: 2706399441444028239}
     thumbnail: {fileID: 21300000, guid: 71b8fa4976424a742bc6a62694e691d1, type: 3}
-    bullet: {fileID: 0}
+    bullet: {fileID: 6045936182016805959, guid: 102cb4e0d1c5e7641b8fcf74f25a1986, type: 3}
     damage: 1
     shootPoint:
     - {fileID: 8893922252963669291}
@@ -162,7 +162,7 @@ MonoBehaviour:
     turret: {fileID: 8378330587926663706}
     construction: {fileID: 6663679307779982866}
     thumbnail: {fileID: 21300000, guid: 90f71bfa562de39439cd83aa9a642989, type: 3}
-    bullet: {fileID: 0}
+    bullet: {fileID: 6045936182016805959, guid: ffb73ac6a8632db4e910119ce5d6e961, type: 3}
     damage: 1
     shootPoint:
     - {fileID: 2683925333170444351}
@@ -174,7 +174,7 @@ MonoBehaviour:
     turret: {fileID: 8238481354072571040}
     construction: {fileID: 4606575086887959047}
     thumbnail: {fileID: 21300000, guid: d079f2f9ad26d664a94a8a35b349e316, type: 3}
-    bullet: {fileID: 0}
+    bullet: {fileID: 6045936182016805959, guid: e4f10bf29779af2408a8dd1f1939aa87, type: 3}
     damage: 1
     shootPoint:
     - {fileID: 8467250750647341192}
