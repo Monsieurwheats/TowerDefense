@@ -8,7 +8,13 @@ public class Player : MonoBehaviour
 {
     public int Money
     {
-        set { _money = value; Refresh(); }
+        set 
+        { 
+            _money = value; 
+            Refresh();
+            GameM.UIsound.clip = buy;
+            GameM.UIsound.Play();
+        }
         get => _money;
     }
 
@@ -23,6 +29,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private TMP_Text moneyText = null;
     [SerializeField] private TMP_Text lifeText = null;
+    [SerializeField] private AudioClip buy;
 
     private void Start()
     {

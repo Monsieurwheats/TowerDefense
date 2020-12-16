@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public Transform[] ePref = new Transform[4];
     public Waves[] waves;
     public static int EAlive = 0;
-    public static int ELeftSpawn = 0;
+
     private int waveNumber = 0;
     public bool playing = false;
 
@@ -27,7 +26,6 @@ public class WaveSpawner : MonoBehaviour
         Debug.Log("Wavenumber: " + (waveNumber));
         playing = true;
         Waves wave = waves[waveNumber];
-        ELeftSpawn = waveNumber;
         foreach(var e in wave.Enemies)
         {
 
@@ -65,7 +63,6 @@ public class WaveSpawner : MonoBehaviour
         var x = Instantiate(enemy.minions, transform.position,transform.rotation);
         x.Level = enemy.level;
         EAlive++;
-        ELeftSpawn--;
     }
 
 }

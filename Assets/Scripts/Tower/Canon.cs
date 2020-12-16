@@ -17,7 +17,9 @@ public class Canon : Tower
             });
             // TODO: Remove damage and only spawn bullet
             print("shoot on " +  minionsInRange[0]);
-            minionsInRange[0].takeDmg(CurrLevel.damage); //ask oli where dmg is for tower
+            minionsInRange[0].takeDmg(CurrLevel.damage);
+            Debug.Log(CurrLevel.damage);
+            Debug.Log(CurrLevel.secPerShot);
             
             yield return new WaitForSeconds(CurrLevel.secPerShot);
         }
