@@ -17,10 +17,12 @@ public class TowerUI : MonoBehaviour
     {
         set
         {
+            if (_selectedTower) _selectedTower.RangeShown(false);
             _selectedTower = value;
             var upgradesTransform = upgradesPanel.transform;
             if (_selectedTower != null)
             {
+                _selectedTower.RangeShown(true);
                 StartCoroutine(RefreshUI(upgradesTransform));
                 towerUI.SetActive(true);
             }

@@ -54,15 +54,16 @@ public abstract class Tower : MonoBehaviour
         get => _level;
         set
         {
-            _level.turret.SetActive(false);
+            _level?.turret.SetActive(false);
             _level = value;
             _level.turret.SetActive(true);
+            rangeIndicator.transform.localScale = new Vector3(_level.range, 0.1f, _level.range);
         }
     }
 
     private void Start()
     {
-        _level = level1;
+        CurrLevel = level1;
         level1.SetNext(level2);
         level2.SetNext(level3);
         level3.SetNext(level4A).SetNext(level4B);
@@ -72,7 +73,6 @@ public abstract class Tower : MonoBehaviour
     public void TryPlace(RaycastHit hit)
     {
         transform.position = hit.point;
-        rangeIndicator.transform.localScale = new Vector3(level1.range, 0.1f, level1.range);
         var bounds = box.bounds;
         var hitColliders = Physics.OverlapBox(bounds.center, bounds.extents / 2);
         if (hitColliders.Length != 0)
@@ -134,6 +134,11 @@ public abstract class Tower : MonoBehaviour
         Game.TowerUI.SelectedTower = this;
     }
 
+    public void RangeShown(bool shown)
+    {
+        rangeIndicator.SetActive(shown);
+    }
+    
     private void OnDrawGizmos()
     {
         if (CurrLevel == null) return;
