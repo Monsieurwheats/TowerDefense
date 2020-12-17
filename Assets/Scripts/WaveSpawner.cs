@@ -6,6 +6,8 @@ public class WaveSpawner : MonoBehaviour
 {
     public Waves[] waves;
 
+    [SerializeField] private Transform spawnPoint;
+
     private int _eAlive;
 
     public int EAlive
@@ -65,9 +67,9 @@ public class WaveSpawner : MonoBehaviour
         
     }
 
-    void SpawnEnemy(Enemy enemy)
+    private void SpawnEnemy(Enemy enemy)
     {
-        var x = Instantiate(enemy.minions, transform.position,transform.rotation);
+        var x = Instantiate(enemy.minions, spawnPoint.position, spawnPoint.rotation);
         x.Level = enemy.level;
         EAlive++;
     }
