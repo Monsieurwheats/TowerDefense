@@ -26,7 +26,6 @@ public class End : MonoBehaviour
                 if(hit.GetComponent<Minions>() != null)
                 {
                     //+1 since first level is level 0;
-                    Debug.Log("yes");
                     int dmg = hit.GetComponent<Minions>().damage * (hit.GetComponent<Minions>().Level + 1);
                     Game.Player.Life -= dmg;
                     Game.WaveSpawner.EAlive--;

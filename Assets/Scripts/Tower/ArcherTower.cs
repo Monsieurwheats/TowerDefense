@@ -20,9 +20,12 @@ public class ArcherTower : Tower
             });
             var shooterTransform = Shooter;
             var shooterPos = shooterTransform.position;
-            var targetDir = shooterPos - minionsInRange[0].transform.position;
-            var angle = Vector3.SignedAngle(shooterTransform.forward, targetDir, Vector3.up);
-            shooterTransform.RotateAround(shooterPos, Vector3.up, angle); // Make archer look at enemy
+            if(minionsInRange[0] != null){
+                var targetDir = shooterPos - minionsInRange[0].transform.position;
+                var angle = Vector3.SignedAngle(shooterTransform.forward, targetDir, Vector3.up);
+                shooterTransform.RotateAround(shooterPos, Vector3.up, angle); // Make archer look at enemy
+            }
+            
             Weapon.Create(CurrLevel.bullet, minionsInRange[0], shooterTransform, CurrLevel.damage);
             AudioSource.PlayClipAtPoint(shootingSound, transform.position);
             

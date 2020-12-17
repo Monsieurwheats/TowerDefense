@@ -18,6 +18,7 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
+    public bool playing = false;
     private int WaveNumber { get; set; } = 0;
 
     public bool Playing => EAlive != 0;
@@ -44,7 +45,7 @@ public class WaveSpawner : MonoBehaviour
 
         }
         yield return new WaitWhile(() => Playing);
-        Game.Player.Money += 5;//5 bidous chaque round
+        Game.Player.Money += 7;//5 bidous chaque round
         WaveNumber++;
         if(WaveNumber == waves.Length)
         {

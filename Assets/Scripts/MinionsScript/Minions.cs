@@ -20,7 +20,7 @@ public class Minions : MonoBehaviour
 
     protected virtual void Start()
     {
-        value = level + 2;
+        value = level + 1;
         // will change when making the waves
         
         //level = 4;

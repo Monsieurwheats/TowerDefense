@@ -14,9 +14,7 @@ public class Chevalier : Minions
     }
     public override void takeDmg(int dmg)
     {
-        Debug.Log(base.target);
         hp -= dmg;
-       Debug.Log((int)(hp / 2 + 0.5));
         Level = hp > 0 ? (int)(hp / 2 + 0.5) : (int)(hp / 2);
         base.setTexture();
 

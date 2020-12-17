@@ -132,8 +132,8 @@ MonoBehaviour:
     shootPoint:
     - {fileID: 2780977936319357019}
     range: 30
-    secPerShot: 1
-    price: 30
+    secPerShot: 1.5
+    price: 20
     sellPrice: 0
   level2:
     turret: {fileID: 6344282954800933607}
@@ -144,8 +144,8 @@ MonoBehaviour:
     shootPoint:
     - {fileID: 2501085760441530086}
     range: 32
-    secPerShot: 0.9
-    price: 10
+    secPerShot: 1
+    price: 20
     sellPrice: 0
   level3:
     turret: {fileID: 8397211259518399635}
@@ -157,7 +157,7 @@ MonoBehaviour:
     - {fileID: 8893922252963669291}
     range: 35
     secPerShot: 0.8
-    price: 15
+    price: 25
     sellPrice: 0
   level4A:
     turret: {fileID: 8378330587926663706}
@@ -169,7 +169,7 @@ MonoBehaviour:
     - {fileID: 2683925333170444351}
     range: 45
     secPerShot: 0.7
-    price: 25
+    price: 40
     sellPrice: 0
   level4B:
     turret: {fileID: 8238481354072571040}
@@ -180,8 +180,8 @@ MonoBehaviour:
     shootPoint:
     - {fileID: 8467250750647341192}
     range: 35
-    secPerShot: 0.1
-    price: 25
+    secPerShot: 0.4
+    price: 40
     sellPrice: 0
 --- !u!65 &181854723955144987
 BoxCollider:

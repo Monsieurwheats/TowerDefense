@@ -10,8 +10,8 @@ public class Wizard : Minions
         base.Start();
         StartCoroutine(checkMinions());
     }
-    WaitForSeconds refresh = new WaitForSeconds(4f);
-    float radius = 3f;
+    WaitForSeconds refresh = new WaitForSeconds(3.5f);
+    float radius = 5f;
     Vector3 center;
     IEnumerator checkMinions()
     {
