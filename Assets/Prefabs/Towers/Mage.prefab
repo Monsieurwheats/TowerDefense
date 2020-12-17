@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8549752325045694dabb54569c3d98bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootingSound: {fileID: 8300000, guid: f9dac36518ed1c046b374825bbbf6efa, type: 3}
   box: {fileID: 181854723955144987}
   rangeIndicator: {fileID: 5666810430422549716}
   level1:

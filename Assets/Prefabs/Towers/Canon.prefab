@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb155044fcf0764aa7a58ea63817805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootingSound: {fileID: 8300000, guid: 41ffa0bd6ca648944afd83ffbefb1dd4, type: 3}
   box: {fileID: 8539859444716199105}
   rangeIndicator: {fileID: 4337168359972420404}
   level1:

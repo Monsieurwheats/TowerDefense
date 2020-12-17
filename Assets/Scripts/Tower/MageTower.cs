@@ -16,6 +16,7 @@ public class MageTower : Tower
                 return minionsInRange.Length != 0;
             });
             Weapon.Create(CurrLevel.bullet, minionsInRange[0], Shooter, CurrLevel.damage);
+            AudioSource.PlayClipAtPoint(shootingSound, transform.position);
 
             yield return new WaitForSeconds(CurrLevel.secPerShot);
         }

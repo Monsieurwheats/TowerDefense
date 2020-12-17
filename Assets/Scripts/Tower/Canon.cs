@@ -17,6 +17,7 @@ public class Canon : Tower
             });
             
             Weapon.Create(CurrLevel.bullet, minionsInRange[0], Shooter, CurrLevel.damage);
+            AudioSource.PlayClipAtPoint(shootingSound, this.transform.position);
             yield return new WaitForSeconds(CurrLevel.secPerShot);
         }
     }
