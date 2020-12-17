@@ -108,15 +108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb75836bcaf2954499df22865b8f319c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ePref:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   waves:
-  - rate: 2
+  - rate: 1
     Enemies:
-    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+    - minions: {fileID: 2502190902277877747, guid: b3e782dad6241ae4c86ee7115386e231, type: 3}
+      level: 0
+    - minions: {fileID: 2502190902277877747, guid: b3e782dad6241ae4c86ee7115386e231, type: 3}
       level: 0
   - rate: 1.5
     Enemies:
@@ -148,4 +145,80 @@ MonoBehaviour:
       level: 1
     - minions: {fileID: 5938570266905656798, guid: 84045ed3c3bab3847aa29a1dfaaabd63, type: 3}
       level: 2
+  - rate: 1.25
+    Enemies:
+    - minions: {fileID: 5938570266905656798, guid: 84045ed3c3bab3847aa29a1dfaaabd63, type: 3}
+      level: 0
+    - minions: {fileID: 5938570266905656798, guid: 84045ed3c3bab3847aa29a1dfaaabd63, type: 3}
+      level: 1
+    - minions: {fileID: 5938570266905656798, guid: 84045ed3c3bab3847aa29a1dfaaabd63, type: 3}
+      level: 2
+    - minions: {fileID: 5938570266905656798, guid: 84045ed3c3bab3847aa29a1dfaaabd63, type: 3}
+      level: 3
+    - minions: {fileID: 5938570266905656798, guid: 84045ed3c3bab3847aa29a1dfaaabd63, type: 3}
+      level: 4
+  - rate: 1.25
+    Enemies:
+    - minions: {fileID: 7197469832357392370, guid: ddaeeb6a7b0a23d4ab9f47de2b041ecd, type: 3}
+      level: 3
+    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+      level: 1
+    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+      level: 1
+    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+      level: 1
+    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+      level: 1
+    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+      level: 1
+    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+      level: 1
+  - rate: 1.25
+    Enemies:
+    - minions: {fileID: 7197469832357392370, guid: ddaeeb6a7b0a23d4ab9f47de2b041ecd, type: 3}
+      level: 3
+    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+      level: 1
+    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+      level: 1
+    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+      level: 1
+    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+      level: 1
+    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+      level: 1
+    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+      level: 1
+  - rate: 1.25
+    Enemies:
+    - minions: {fileID: 7197469832357392370, guid: ddaeeb6a7b0a23d4ab9f47de2b041ecd, type: 3}
+      level: 3
+    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+      level: 1
+    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+      level: 1
+    - minions: {fileID: 5938570266905656798, guid: 84045ed3c3bab3847aa29a1dfaaabd63, type: 3}
+      level: 1
+    - minions: {fileID: 2502190902277877747, guid: b3e782dad6241ae4c86ee7115386e231, type: 3}
+      level: 1
+    - minions: {fileID: 2502190902277877747, guid: b3e782dad6241ae4c86ee7115386e231, type: 3}
+      level: 1
+    - minions: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
+      level: 1
+  - rate: 1.25
+    Enemies:
+    - minions: {fileID: 7197469832357392370, guid: ddaeeb6a7b0a23d4ab9f47de2b041ecd, type: 3}
+      level: 4
+    - minions: {fileID: 2502190902277877747, guid: b3e782dad6241ae4c86ee7115386e231, type: 3}
+      level: 1
+    - minions: {fileID: 2502190902277877747, guid: b3e782dad6241ae4c86ee7115386e231, type: 3}
+      level: 1
+    - minions: {fileID: 2502190902277877747, guid: b3e782dad6241ae4c86ee7115386e231, type: 3}
+      level: 1
+    - minions: {fileID: 2502190902277877747, guid: b3e782dad6241ae4c86ee7115386e231, type: 3}
+      level: 1
+    - minions: {fileID: 2502190902277877747, guid: b3e782dad6241ae4c86ee7115386e231, type: 3}
+      level: 1
+    - minions: {fileID: 2502190902277877747, guid: b3e782dad6241ae4c86ee7115386e231, type: 3}
+      level: 1
   playing: 0

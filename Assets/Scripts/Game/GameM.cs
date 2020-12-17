@@ -4,26 +4,24 @@ using UnityEngine;
 
 public class GameM : MonoBehaviour
 {
-    public WaveSpawner spawner;
-    public static AudioSource UIsound;
-    public static AudioSource GamePlaySound;
+    public AudioSource UIsound;
+    public AudioSource GamePlaySound;
     public AudioClip wavestart;
 
     public void Start()
     {
-        UIsound = GetComponents<AudioSource>()[0];
-        GamePlaySound = GetComponents<AudioSource>()[1];
+        Game.GameManager = this;
     }
 
     
 
     public void PlayerWave()
     {
-        if(spawner.playing == false && spawner.enabled == true) // tempo cond maybe
+        if(Game.WaveSpawner.playing == false && Game.WaveSpawner.enabled == true) // tempo cond maybe
         {
             UIsound.clip = wavestart;
             UIsound.Play();
-            spawner.StartWave();
+            Game.WaveSpawner.StartWave();
         }
   
 

@@ -13,6 +13,10 @@ public static class Game
 
     public static Player Player = null;
 
+    public static WaveSpawner WaveSpawner = null;
+
+    public static GameM GameManager = null;
+
     public const int TileSize = 10;
 
 }

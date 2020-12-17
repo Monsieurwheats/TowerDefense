@@ -12,8 +12,8 @@ public class Player : MonoBehaviour
         { 
             if(_money> value)
             {
-                GameM.UIsound.clip = buy;
-                GameM.UIsound.Play();
+                Game.GameManager.UIsound.clip = buy;
+                Game.GameManager.UIsound.Play();
             } 
             _money = value; 
             Refresh();
