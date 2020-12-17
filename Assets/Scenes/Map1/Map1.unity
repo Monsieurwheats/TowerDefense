@@ -2574,6 +2574,10 @@ PrefabInstance:
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7439189566269994790, guid: dfaab0d3b278e2b4fb80e457a00296c9, type: 3}
+      propertyPath: waves.Array.data[5].Enemies.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439189566269994790, guid: dfaab0d3b278e2b4fb80e457a00296c9, type: 3}
       propertyPath: waves.Array.data[1].Enemies.Array.data[2].minions
       value: 
       objectReference: {fileID: 6285630061845854890, guid: 9ab3ea3808a2a2a4b8d1c575c80cbde2, type: 3}
@@ -8685,6 +8689,14 @@ PrefabInstance:
     - target: {fileID: 6293646070544835537, guid: 4bc17599158b8b241a44cfdcb5b86a93, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954931311761223673, guid: 4bc17599158b8b241a44cfdcb5b86a93, type: 3}
+      propertyPath: m_text
+      value: $ 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156746055783575949, guid: 4bc17599158b8b241a44cfdcb5b86a93, type: 3}
+      propertyPath: m_text
+      value: $ 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bc17599158b8b241a44cfdcb5b86a93, type: 3}
