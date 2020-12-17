@@ -36,7 +36,7 @@ public class SpearMan : Minions
     {
         //int r = (Random.Range(0, 5) * 1000) % 5;
         //maybe make level random
-        WaveSpawner.EAlive += 2;
+        Game.WaveSpawner.EAlive += 2;
         var b = Instantiate(knight);
         b.transform.position = transform.position;
         b.transform.rotation = gameObject.transform.rotation;

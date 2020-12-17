@@ -84,7 +84,7 @@ public class Minions : MonoBehaviour
     {
 
         Game.Player.Money += value;
-        WaveSpawner.EAlive--;
+        Game.WaveSpawner.EAlive--;
         Destroy(gameObject);
     }
 

@@ -5,10 +5,12 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     public Waves[] waves;
-    public static int EAlive = 0;
+    
+    public int EAlive { get; set; } = 0;
 
-    private int waveNumber = 0;
-    public bool playing = false;
+    private int WaveNumber { get; set; } = 0;
+
+    public bool Playing => EAlive != 0;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +24,8 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator  SpawnWave()
     {
-        Debug.Log("Wavenumber: " + (waveNumber));
-        playing = true;
-        Waves wave = waves[waveNumber];
+        Debug.Log("Wavenumber: " + (WaveNumber));
+        Waves wave = waves[WaveNumber];
         foreach(var e in wave.Enemies)
         {
 
@@ -32,18 +33,13 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(wave.rate);
 
         }
-        while(EAlive > 0)
-        {
-
-            Debug.Log("Minions alive: " + EAlive);
-            yield return new WaitForSeconds(1f);
-        }
+        yield return new WaitWhile(() => Playing);
         Game.Player.Money += 5;//5 bidous chaque round
-        waveNumber++;
-        playing = false;
-        if(waveNumber == waves.Length)
+        WaveNumber++;
+        if(WaveNumber == waves.Length)
         {
-            this.enabled = false;
+            enabled = false;
+            Game.GameManager.EndGame(true);
         }
 
         yield return null;
@@ -52,7 +48,7 @@ public class WaveSpawner : MonoBehaviour
 
     public void StartWave()
     {
-        if (playing == false)
+        if (!Playing)
         {
             StartCoroutine(SpawnWave());
         }

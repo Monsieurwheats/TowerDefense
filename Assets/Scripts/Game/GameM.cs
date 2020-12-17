@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,7 +12,9 @@ public class GameM : MonoBehaviour
     public AudioSource GamePlaySound;
     public AudioClip wavestart;
 
-    [SerializeField] private Image fastButton;
+    [SerializeField] private Image fastButton = null;
+    [SerializeField] private GameObject endScreen = null;
+    [SerializeField] private TMP_Text endText = null;
 
     private bool _isFast;
 
@@ -20,7 +24,9 @@ public class GameM : MonoBehaviour
         set
         {
             _isFast = value;
+            PlayerPrefs.SetInt("IsFast", _isFast? 1 : 0);
             fastButton.color = _isFast ? Color.yellow : Color.gray;
+            Time.timeScale = IsFast ? 2 : 1;
         }
         
     }
@@ -28,14 +34,15 @@ public class GameM : MonoBehaviour
     public void Start()
     {
         Game.GameManager = this;
-        IsFast = false;
+        IsFast = PlayerPrefs.GetInt("IsFast", 0) == 1;
+        endScreen.SetActive(false);
     }
 
     
 
     public void PlayerWave()
     {
-        if (Game.WaveSpawner.playing || !Game.WaveSpawner.enabled) return;
+        if (Game.WaveSpawner.Playing || !Game.WaveSpawner.enabled) return;
         UIsound.clip = wavestart;
         UIsound.Play();
         Game.WaveSpawner.StartWave();
@@ -44,9 +51,14 @@ public class GameM : MonoBehaviour
     public void Fast()
     {
         IsFast = !IsFast;
-        Time.timeScale = IsFast ? 2 : 1;
     }
 
+    public void EndGame(bool hasWon)
+    {
+        var word = hasWon ? "You Win!" : "You Lose";
+        endText.text = word;
+        endScreen.SetActive(true);
+    }
 
     public void Menu()
     {

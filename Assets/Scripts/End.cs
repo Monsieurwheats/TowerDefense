@@ -29,7 +29,7 @@ public class End : MonoBehaviour
                     Debug.Log("yes");
                     int dmg = hit.GetComponent<Minions>().damage * (hit.GetComponent<Minions>().Level + 1);
                     Game.Player.Life -= dmg;
-                    WaveSpawner.EAlive--;
+                    Game.WaveSpawner.EAlive--;
                     Destroy(hit.gameObject);
                 }
             }

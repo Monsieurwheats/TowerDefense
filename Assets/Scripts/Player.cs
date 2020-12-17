@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     public int Life
     {
-        set { _life = value; Refresh(); }
+        set { if (value <= 0) Game.GameManager.EndGame(false); _life= value; Refresh(); }
         get => _life;
     }
     
