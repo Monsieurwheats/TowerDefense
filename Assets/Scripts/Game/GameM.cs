@@ -13,6 +13,7 @@ public class GameM : MonoBehaviour
     public AudioClip wavestart;
 
     [SerializeField] private Image fastButton = null;
+    [SerializeField] private Image playButton = null;
     [SerializeField] private GameObject endScreen = null;
     [SerializeField] private TMP_Text endText = null;
 
@@ -31,10 +32,17 @@ public class GameM : MonoBehaviour
         
     }
 
+    public bool IsPlaying
+    {
+        set => playButton.color = value ? Color.gray : Color.green;
+    }
+    
+
     public void Start()
     {
         Game.GameManager = this;
         IsFast = PlayerPrefs.GetInt("IsFast", 0) == 1;
+        IsPlaying = false;
         endScreen.SetActive(false);
     }
 
@@ -52,7 +60,7 @@ public class GameM : MonoBehaviour
     {
         IsFast = !IsFast;
     }
-
+    
     public void EndGame(bool hasWon)
     {
         var word = hasWon ? "You Win!" : "You Lose";

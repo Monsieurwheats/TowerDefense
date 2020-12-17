@@ -5,8 +5,18 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     public Waves[] waves;
-    
-    public int EAlive { get; set; } = 0;
+
+    private int _eAlive;
+
+    public int EAlive
+    {
+        get => _eAlive;
+        set
+        {
+            _eAlive = value;
+            Game.GameManager.IsPlaying = _eAlive > 0;
+        }
+    }
 
     private int WaveNumber { get; set; } = 0;
 

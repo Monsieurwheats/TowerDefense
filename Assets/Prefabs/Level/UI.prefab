@@ -2461,6 +2461,7 @@ MonoBehaviour:
   GamePlaySound: {fileID: 1672297844}
   wavestart: {fileID: 8300000, guid: b1b4f0914bd310e48a9017cc91129353, type: 3}
   fastButton: {fileID: 8671025334105496169}
+  playButton: {fileID: 6417218736524584591}
   endScreen: {fileID: 3971468093494465789}
   endText: {fileID: 6090064936757366234}
 --- !u!82 &1672297845
