@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameM : MonoBehaviour
 {
-    public Player player = Game.Player;
     public WaveSpawner spawner;
     public static AudioSource UIsound;
     public static AudioSource GamePlaySound;

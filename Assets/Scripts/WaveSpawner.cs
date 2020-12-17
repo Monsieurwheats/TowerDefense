@@ -39,12 +39,14 @@ public class WaveSpawner : MonoBehaviour
             Debug.Log("Minions alive: " + EAlive);
             yield return new WaitForSeconds(1f);
         }
+        Game.Player.Money += 5;//5 bidous chaque round
         waveNumber++;
         playing = false;
         if(waveNumber == waves.Length)
         {
             this.enabled = false;
         }
+
         yield return null;
         
     }

@@ -20,6 +20,7 @@ public class Minions : MonoBehaviour
 
     protected virtual void Start()
     {
+        value = level + 2;
         // will change when making the waves
         
         //level = 4;
@@ -66,7 +67,7 @@ public class Minions : MonoBehaviour
         }
     }
 
-    protected virtual void setTexture()
+    public virtual void setTexture()
     {
         if (level > -1)
         {

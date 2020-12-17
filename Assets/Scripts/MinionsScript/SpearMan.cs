@@ -11,10 +11,10 @@ public class SpearMan : Minions
     {
         base.Start();
         maxl = base.level;
-        agent.speed = agent.speed / 1.5f;
+        agent.speed = agent.speed / 1.25f;
     }
 
-    protected override void setTexture()
+    public override void setTexture()
     {
         if (level > -1)
         {
