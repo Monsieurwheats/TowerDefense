@@ -30,9 +30,9 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetFloat("volume", volume);
     }
     
-    public void LoadMap(SceneAsset map)
+    public void LoadMap(int map)
     {
-        SceneManager.LoadScene(map.name);
+        SceneManager.LoadScene(map);
     }
     
     public void OpenInfo()
