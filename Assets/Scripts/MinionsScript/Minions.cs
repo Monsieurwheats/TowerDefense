@@ -16,7 +16,7 @@ public class Minions : MonoBehaviour
     public  int value = 5;
     public int damage = 1;
 
-    public float Distance => agent.remainingDistance;
+    public float Distance => agent ? agent.remainingDistance : GetComponent<NavMeshAgent>().remainingDistance;
 
     protected virtual void Start()
     {

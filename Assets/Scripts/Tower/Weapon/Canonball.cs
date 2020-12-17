@@ -12,6 +12,9 @@ public class Canonball : Weapon
     private float _animationTime;
     private Vector3 _realTarget;
 
+    private const float AnimationSpeed = 1f;
+    private const float AnimationDuration = 1 / AnimationSpeed;
+
 
     public override void Shoot()
     {
@@ -22,14 +25,13 @@ public class Canonball : Weapon
     private IEnumerator DoParabola()
     {
         var bullet = transform;
-        while (transform.position.y > 0)
+        while (_animationTime <= AnimationDuration)
         {
-            // TODO: Add rotation
             _animationTime += Time.deltaTime;
-            _animationTime %= 5f;
-            var newPos = MathParabola.Parabola(Origin, _realTarget, 5f, _animationTime);
+            var newPos = MathParabola.Parabola(Origin, _realTarget, 10f, _animationTime * AnimationSpeed);
             bullet.position = newPos;
             bullet.LookAt(_realTarget);
+            bullet.Rotate(Vector3.right, 90 * _animationTime / AnimationDuration);
             yield return null;
         }
 
