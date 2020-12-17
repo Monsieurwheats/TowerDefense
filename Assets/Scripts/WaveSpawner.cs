@@ -17,8 +17,7 @@ public class WaveSpawner : MonoBehaviour
             Game.GameManager.IsPlaying = _eAlive > 0;
         }
     }
-
-    public bool playing = false;
+    
     private int WaveNumber { get; set; } = 0;
 
     public bool Playing => EAlive != 0;

@@ -15,9 +15,31 @@ public class Minions : MonoBehaviour
     //place holder
     public  int value = 5;
     public int damage = 1;
-
-    public float Distance => agent ? agent.remainingDistance : GetComponent<NavMeshAgent>().remainingDistance;
-
+    
+    public float Distance
+    {
+        get
+        {
+            // Check if path is working
+            if (!agent ||
+                agent.pathPending ||
+                agent.pathStatus == NavMeshPathStatus.PathInvalid ||
+                agent.path.corners.Length ==0)
+                return 0;
+            // Check if usual method is working
+            var defaultDistance = agent.remainingDistance;
+            if (!float.IsInfinity(defaultDistance)) return defaultDistance;
+            // Fallback to big math
+            float distance = 0;
+            var corners = agent.path.corners;
+            for (var i = 0; i < corners.Length - 1; ++i)
+            {
+                distance += Vector3.Distance(corners[i], corners[i + 1]);
+            }
+            return distance;
+        }
+    }
+    
     protected virtual void Start()
     {
         value = level + 1;
@@ -44,7 +66,6 @@ public class Minions : MonoBehaviour
         //only way found to make agent walk through each other
         yield return new WaitForSeconds(0.000001f);
         agent.radius = 0.001f;
-
     }
     //test tool
     IEnumerator tDmg()
