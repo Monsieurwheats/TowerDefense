@@ -17,6 +17,8 @@ public static class Game
 
     public static GameM GameManager = null;
 
+    public static MusicPlayer MusicPlayer = null;
+
     public const int TileSize = 10;
 
 }
