@@ -9,6 +9,11 @@ public class MusicPlayer : MonoBehaviour
     
     private void Start()
     {
+        if (Game.MusicPlayer != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         DontDestroyOnLoad(gameObject);
         Game.MusicPlayer = this;
     }
