@@ -58,7 +58,7 @@ public class ShopUI : MonoBehaviour
         if (_towerToPlace == null) return;
         var ray = Game.Cam.ScreenPointToRay(Input.mousePosition);
         if (!Physics.Raycast(ray, out var hitInfo, float.MaxValue, LayerMask.GetMask("Ground"))) return; // Return if no hit
-        if (!Game.Map.Tiles.Contains(hitInfo.collider.transform)) return; // Return if not floor
+        //if (!Game.Map.Tiles.Contains(hitInfo.collider.transform)) return; // Return if not floor
         _towerToPlace.TryPlace(hitInfo);
     }
 
