@@ -6,9 +6,12 @@ public class Laser : Weapon
 {
     public override void Shoot()
     {
-        var line = GetComponent<LineRenderer>();
-        line.SetPositions(new [] {Origin, Target.transform.position});
-        Target.takeDmg(Damage);
+        if (Target)
+        {
+            var line = GetComponent<LineRenderer>();
+            line.SetPositions(new [] {Origin, Target.transform.position});
+            Target.takeDmg(Damage);
+        }
         StartCoroutine(Remove());
     }
 

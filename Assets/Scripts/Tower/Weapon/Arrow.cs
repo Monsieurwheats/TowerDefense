@@ -16,21 +16,23 @@ public class Arrow : Weapon
 
     private IEnumerator Travel()
     {
-        var arrowTransform = transform;
-        var targetTransform = Target.transform;
-        while (_animationTime <= AnimationDuration && Target)
-        {
-            _animationTime += Time.deltaTime;
-            var targetPos = targetTransform.position;
-            var newPos = MathParabola.Parabola(Origin, targetPos, 0f, _animationTime * AnimationSpeed);
-            arrowTransform.position = newPos;
-            arrowTransform.LookAt(targetPos);
-            arrowTransform.Rotate(Vector3.right, -90);
-            yield return null;
-        }
-        if (Target)
-        {
-            Target.takeDmg(Damage);
+        if (Target) {
+            var arrowTransform = transform;
+            var targetTransform = Target.transform;
+            while (_animationTime <= AnimationDuration && Target)
+            {
+                _animationTime += Time.deltaTime;
+                var targetPos = targetTransform.position;
+                var newPos = MathParabola.Parabola(Origin, targetPos, 0f, _animationTime * AnimationSpeed);
+                arrowTransform.position = newPos;
+                arrowTransform.LookAt(targetPos);
+                arrowTransform.Rotate(Vector3.right, -90);
+                yield return null;
+            }
+            if (Target)
+            {
+                Target.takeDmg(Damage);
+            }
         }
         Destroy(gameObject);
     }

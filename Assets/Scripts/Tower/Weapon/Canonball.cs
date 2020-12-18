@@ -39,7 +39,7 @@ public class Canonball : Weapon
         var minions = inRange.Select(c => c.GetComponent<Minions>()).Where(m => m != null).ToArray();
         foreach (var minion in minions)
         {
-            minion.takeDmg(Damage);
+            if (minion) minion.takeDmg(Damage);
         }
 
         Instantiate(explosion, transform.position, Quaternion.identity);
