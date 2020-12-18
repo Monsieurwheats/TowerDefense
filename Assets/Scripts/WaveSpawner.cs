@@ -20,14 +20,15 @@ public class WaveSpawner : MonoBehaviour
         }
     }
     
-    private int WaveNumber { get; set; } = 0;
+    public int WaveNumber { get; set; } = 0;
 
     public bool Playing => EAlive != 0;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Game.WaveSpawner = this;
+        Game.WaveSpawnerLoaded.Invoke();
     }
 
     // Update is called once per frame
@@ -48,6 +49,7 @@ public class WaveSpawner : MonoBehaviour
         yield return new WaitWhile(() => Playing);
         Game.Player.Money += 7;//5 bidous chaque round
         WaveNumber++;
+        Game.StoreSave(Game.CurrSave);
         if(WaveNumber == waves.Length)
         {
             enabled = false;

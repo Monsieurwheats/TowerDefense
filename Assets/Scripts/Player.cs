@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
     {
         Game.Player = this;
         Refresh();
+        Game.PlayerLoaded.Invoke();
     }
 
     private void Update()

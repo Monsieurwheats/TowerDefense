@@ -17,6 +17,10 @@ public class GameM : MonoBehaviour
     [SerializeField] private GameObject endScreen = null;
     [SerializeField] private TMP_Text endText = null;
 
+    [SerializeField] private GameObject ArcherTowerPrefab;
+    [SerializeField] private GameObject CanonPrefab;
+    [SerializeField] private GameObject MageTowerPrefab;
+    
     private bool _isFast;
 
     private bool IsFast
@@ -44,9 +48,30 @@ public class GameM : MonoBehaviour
         IsFast = PlayerPrefs.GetInt("IsFast", 0) == 1;
         IsPlaying = false;
         endScreen.SetActive(false);
+        Game.GameManagerLoaded.Invoke();
     }
 
-    
+    public GameObject CreateTower(string type)
+    {
+        GameObject prefab;
+        switch (type)
+        {
+            case "ArcherTower":
+                prefab = ArcherTowerPrefab;
+                break;
+            case "Canon":
+                prefab = CanonPrefab;
+                break;
+            case "MageTower":
+                prefab= MageTowerPrefab;
+                break;
+            default:
+                return null;
+        }
+
+        var go = Instantiate(prefab);
+        return go;
+    }
 
     public void PlayerWave()
     {
@@ -66,6 +91,8 @@ public class GameM : MonoBehaviour
         var word = hasWon ? "You Win!" : "You Lose";
         endText.text = word;
         endScreen.SetActive(true);
+        Game.DeleteSave(Game.CurrSave);
+        Game.CurrSave = null;
     }
 
     public void Menu()

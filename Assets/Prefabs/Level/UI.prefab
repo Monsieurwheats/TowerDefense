@@ -2464,6 +2464,9 @@ MonoBehaviour:
   playButton: {fileID: 6417218736524584591}
   endScreen: {fileID: 3971468093494465789}
   endText: {fileID: 6090064936757366234}
+  ArcherTowerPrefab: {fileID: 2483079753894105243, guid: d2f42ff94c59f4f4395dae6b50f1405f, type: 3}
+  CanonPrefab: {fileID: 1014528265108764443, guid: 4de6cca1f6f74174b8b71fd4a5e54c12, type: 3}
+  MageTowerPrefab: {fileID: 4977772623225498802, guid: f23b04ba529201443b672b5046f15430, type: 3}
 --- !u!82 &1672297845
 AudioSource:
   m_ObjectHideFlags: 0

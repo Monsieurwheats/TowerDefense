@@ -36,6 +36,8 @@ public abstract class Tower : MonoBehaviour
     [SerializeField] private Level level4B = null;
 
     private Level _level;
+
+    private Dictionary<string, Level> _levels;
     
     private int _shooter = 0;
 
@@ -67,6 +69,14 @@ public abstract class Tower : MonoBehaviour
         level1.SetNext(level2);
         level2.SetNext(level3);
         level3.SetNext(level4A).SetNext(level4B);
+        _levels = new Dictionary<string, Level>()
+        {
+            {"1", level1},
+            {"2", level2},
+            {"3", level3},
+            {"4A", level4A},
+            {"4B", level4B}
+        };
     }
 
 
@@ -104,7 +114,7 @@ public abstract class Tower : MonoBehaviour
         StartRound();
         return true;
     }
-
+    
     public void StartRound()
     {
         _shootRoutine = StartCoroutine(Shoot());
@@ -137,6 +147,31 @@ public abstract class Tower : MonoBehaviour
     public void RangeShown(bool shown)
     {
         rangeIndicator.SetActive(shown);
+    }
+
+    public void SetLevel(string level)
+    {
+        CurrLevel = new Dictionary<string, Level>()
+        {
+            {"1", level1},
+            {"2", level2},
+            {"3", level3},
+            {"4A", level4A},
+            {"4B", level4B}
+        }[level];
+        rangeIndicator.SetActive(false);
+    }
+
+    public string GetLevel()
+    {
+        return new Dictionary<string, Level>()
+        {
+            {"1", level1},
+            {"2", level2},
+            {"3", level3},
+            {"4A", level4A},
+            {"4B", level4B}
+        }.First(level => level.Value == CurrLevel).Key;
     }
     
     private void OnDrawGizmos()

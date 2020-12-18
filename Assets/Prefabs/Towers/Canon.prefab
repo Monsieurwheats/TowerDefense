@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8539859444716199105}
   m_Layer: 0
   m_Name: Canon
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
