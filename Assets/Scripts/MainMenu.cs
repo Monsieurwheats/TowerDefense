@@ -23,13 +23,13 @@ public class MainMenu : MonoBehaviour
         volumeSlider.value = volume;
         
         // Prepare saves
-        _saves = Game.ListSaves();
+        _saves = Save.ListSaves();
         foreach (var save in _saves)
         {
             var go = Instantiate(saveButtonPrefab, scrollBoxContent);
             var button = go.GetComponent<Button>();
             var texts = go.GetComponentsInChildren<TMP_Text>();
-            button.onClick.AddListener(() => Game.LoadSave(save));
+            button.onClick.AddListener(() => save.Load());
             texts[0].text = "Map " + save.map;
             texts[1].text = "HP: " + save.life + " | Money: " + save.money + " | Wave: " + save.wave;
         }

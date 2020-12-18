@@ -49,7 +49,7 @@ public class WaveSpawner : MonoBehaviour
         yield return new WaitWhile(() => Playing);
         Game.Player.Money += 7;//5 bidous chaque round
         WaveNumber++;
-        Game.StoreSave(Game.CurrSave);
+        Game.CurrSave.Store();
         if(WaveNumber == waves.Length)
         {
             enabled = false;

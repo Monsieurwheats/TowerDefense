@@ -63,7 +63,7 @@ public abstract class Tower : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         CurrLevel = level1;
         level1.SetNext(level2);
@@ -151,27 +151,13 @@ public abstract class Tower : MonoBehaviour
 
     public void SetLevel(string level)
     {
-        CurrLevel = new Dictionary<string, Level>()
-        {
-            {"1", level1},
-            {"2", level2},
-            {"3", level3},
-            {"4A", level4A},
-            {"4B", level4B}
-        }[level];
+        CurrLevel = _levels[level];
         rangeIndicator.SetActive(false);
     }
 
     public string GetLevel()
     {
-        return new Dictionary<string, Level>()
-        {
-            {"1", level1},
-            {"2", level2},
-            {"3", level3},
-            {"4A", level4A},
-            {"4B", level4B}
-        }.First(level => level.Value == CurrLevel).Key;
+        return _levels.First(level => level.Value == CurrLevel).Key;
     }
     
     private void OnDrawGizmos()
