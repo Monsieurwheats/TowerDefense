@@ -91,7 +91,7 @@ public class GameM : MonoBehaviour
         var word = hasWon ? "You Win!" : "You Lose";
         endText.text = word;
         endScreen.SetActive(true);
-        Game.DeleteSave(Game.CurrSave);
+        Game.CurrSave.Delete();
         Game.CurrSave = null;
     }
 
